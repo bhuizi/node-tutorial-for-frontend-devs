@@ -8,8 +8,10 @@ var bodyParser = require('body-parser');
 // New Code
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/node_app');
-
+// When running on localhost
+// var db = monk('localhost:27017/node_app');
+// Inside Docker
+var db = monk('mongo:27017/nodeapp');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
